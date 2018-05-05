@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="list" style="text-align: center">	
+	</ul>
+	<button id="all" style="margin: auto; display: block;">Download all</button>
+
+	<script type="text/javascript">
+
+		for(var i = 1; i < 8; i++) {
+			var list = document.getElementById('list');
+			var acord = document.createElement('a');
+			acord.setAttribute('href','https://vs1.coursehunters.net/javascript_basic_lynda/lesson'+ i +'.mp4');
+			acord.setAttribute('download', '');
+			acord.setAttribute('style', 'padding-right: 20px');
+			list.appendChild(acord);
+			acord.textContent = 'Video-' + i;
+		}
+
+		window.onload = function() {
+			document.getElementById('all').onclick = function() {
+				var video = document.querySelectorAll('a');
+				console.log(video);
+				for(var j = 0; j < video.length; j++) {
+					var lesson = video[j];
+					console.log(lesson);
+					lesson.click();
+				}
+			}
+		}
+
+	</script>
+</body>
+</html>
