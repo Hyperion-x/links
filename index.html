@@ -2,37 +2,22 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Links</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-	<ul id="list" style="text-align: center">	
-	</ul>
-	<button id="all" style="margin: auto; display: block;">Download all</button>
+	<section class="container">
+		<div class="wrap">
+			<input id="ref" type="text" name="" placeholder="Enter a link">
+			<input id="format" type="text" name="" placeholder="Enter a format">
+			<input id="counter" type="text" name="" placeholder="Amount">
+		</div>
+		<button id="gen">Generate</button>
+		<ul id="list">	
+		</ul>
+		<button id="all">Download all</button>
+	</section>
 
-	<script type="text/javascript">
-
-		for(var i = 1; i < 8; i++) {
-			var list = document.getElementById('list');
-			var acord = document.createElement('a');
-			acord.setAttribute('href','https://vs1.coursehunters.net/javascript_basic_lynda/lesson'+ i +'.mp4');
-			acord.setAttribute('download', '');
-			acord.setAttribute('style', 'padding-right: 20px');
-			list.appendChild(acord);
-			acord.textContent = 'Video-' + i;
-		}
-
-		window.onload = function() {
-			document.getElementById('all').onclick = function() {
-				var video = document.querySelectorAll('a');
-				console.log(video);
-				for(var j = 0; j < video.length; j++) {
-					var lesson = video[j];
-					console.log(lesson);
-					lesson.click();
-				}
-			}
-		}
-
-	</script>
+	<script src="main.js" type="text/javascript"></script>
 </body>
 </html>
